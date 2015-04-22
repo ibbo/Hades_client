@@ -1,5 +1,6 @@
 import socket
 import time
+import socketController as sc
 
 class EventClient:
     def __init__(self, host, port):
@@ -27,8 +28,10 @@ def switchHandler(data):
     switchState = s[1].strip() == 'true'
     if switchState:
         print("Switch %d is on" % switchId)
+        sc.turnOnSocket()
     else:
         print("Switch %d is off" % switchId)
+        sc.turnOffSocket()
 
 if __name__ == "__main__":
     ec = EventClient("localhost", 18000)
