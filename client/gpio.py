@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 import os
 
-GPIO_MODE_PATH = os.path.normpath('/sys/devices/virtual/misc/gpio/mode/')
-GPIO_PIN_PATH = os.path.normpath('/sys/devices/virtual/misc/gpio/pin/')
+GPIO_MODE_PATH = os.path.normpath('/sys/devices/virtual/gpio/mode/')
+GPIO_PIN_PATH = os.path.normpath('/sys/devices/virtual/gpio/pin/')
 GPIO_FILENAME = "gpio"
 
 pinMode = []
