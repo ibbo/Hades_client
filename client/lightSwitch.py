@@ -4,7 +4,6 @@ import sys
 import time
 from client.eventClient import EventClient
 
-
 def setupGPIO():
     GPIO.setmode(GPIO.BOARD)
     # K0-K3 data inputs
@@ -84,6 +83,7 @@ def pulse_modulator():
     GPIO.output(22, False)
 
 def signal_handler(signal, frame):
+    cleanup()
     sys.exit(0)
 
 def cleanup():
