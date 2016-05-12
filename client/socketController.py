@@ -1,7 +1,9 @@
+#!/usr/bin/env python
 __author__ = 'ibbo'
 #import the required modules
 import RPi.GPIO as GPIO
 import time
+import sys
 
 # set the pins numbering mode
 GPIO.setmode(GPIO.BOARD)
@@ -65,3 +67,12 @@ def turnOffSocket():
     time.sleep(0.25)
     # Disable the modulator
     GPIO.output (22, False)
+
+if __name__ == "__main__":
+    arg = sys.argv[1]
+    if arg is "on":
+        turnOnSocket()
+    elif arg is "off":
+        turnOffSocket()
+    else:
+        print("Unrecognized argument %s, should be 'on' or 'off" % arg)
